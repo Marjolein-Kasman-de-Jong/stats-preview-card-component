@@ -1,0 +1,233 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lexend+Deca&display=swap');
+
+
+/*
+1.  Global styles
+    1.1 CSS Reset
+    1.2 Colors
+2.  Typography
+    2.1 Headings
+    2.2 Paragraphs
+    2.3 Accents
+3.  Reusables
+4.  Areas
+    4.1 Background
+    4.2 Stats preview card component
+    4.3 Text and stats
+    4.4 Image
+*/
+
+
+/* 1 - Global styles */
+
+/* 1.1 - CSS reset */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-weight: inherit;
+}
+
+input, 
+button {
+    font-family: inherit;
+}
+
+/* 1.2 - Colors */
+
+:root {
+    --very-dark-blue: hsl(233, 47%, 7%); /* main background */
+    --dark-desaturated-blue: hsl(244, 38%, 16%); /* card background */
+    --soft-violet: hsl(277, 64%, 61%); /* accent */
+    --white: hsl(0, 0%, 100%); /* main heading, stats */
+    --slightly-transparent-white-paragraph: hsla(0, 0%, 100%, 0.75); /* main paragraph */
+    --slightly-transparent-white-heading: hsla(0, 0%, 100%, 0.6); /* stat headings */
+}
+
+/* 2 - Typography */
+
+html {
+    font-size: 16px;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    color: var(--slightly-transparent-white-paragraph);
+    text-align: left;
+
+    @media screen and (max-width: 1100px) {
+        text-align: center;
+    }
+}
+
+/* 2.1 - Headings */
+
+.main-heading {
+    color: var(--white);
+    font-size: 2.25rem;
+    font-weight: 700;
+    line-height: 2.75rem;
+
+    @media screen and (max-width: 1100px) {
+        font-size: 1.75rem;
+        line-height: 2rem;
+    }
+}
+
+.stat-heading {
+    color: var(--slightly-transparent-white-heading);
+    font-family: 'Lexend Deca', sans-serif;
+    font-size: 0.75rem;
+    line-height: 1.5625rem;
+    letter-spacing: 0.0625rem;
+    text-transform: uppercase;
+}
+
+/* 2.2 - Paragraphs */
+
+.regular-paragraph {
+    color: var(--slightly-transparent-white-paragraph);
+    font-size: 0.9375rem;
+    line-height: 1.5625rem;
+}
+
+.stat {
+    color: var(--white);
+    font-size: 1.5rem;
+    font-weight: 700;
+    line-height: normal;
+}
+
+/* 2.3 - Accents */
+
+.accent {
+    color: var(--soft-violet);
+}
+
+/* 3 - Reusables */
+
+.outer-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100vh;
+
+    @media screen and (max-width: 1100px) {
+        align-items: unset;
+        height: unset;
+    }
+}
+
+.inner-container {
+    flex-basis: 1110px;
+    flex-grow: 0;
+    flex-shrink: 1;
+    margin: 88px 20px;
+
+    @media screen and (max-width: 1100px) {
+        max-width: 327px;
+    }
+}
+
+/* 4 - Areas */
+
+/* 4.1 - Background */
+
+body {
+    background-color: var(--very-dark-blue);
+}
+
+/* 4.2 - Stats preview card component */
+
+.stats-preview-card-component {
+    background-color: var(--dark-desaturated-blue);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 8px;
+    overflow: hidden;
+
+    @media screen and (max-width: 1100px) {
+        flex-direction: column-reverse;
+    }
+}
+
+/* 4.3 - Text and stats */
+
+.text-wrapper {
+    flex-basis: 403px;
+    flex-grow: 0;
+    flex-shrink: 1;
+    margin-left: 72px;
+    padding: 71px 0 59px 0;
+    
+    @media screen and (max-width: 1100px) {
+        flex-basis: unset;
+        max-width: 264px;
+        margin-left: unset;
+        padding: 32px 0;
+    }
+}
+
+.text-wrapper > p {
+    margin-top: 25px;
+    max-width: 374px;
+
+    @media screen and (max-width: 1100px) {
+        margin-top: 16px;
+    }
+}
+
+.stats-wrapper {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 72px;
+    max-width: 351px;
+
+    @media screen and (max-width: 1100px) {
+        flex-direction: column;
+        justify-content: unset;
+        gap: 24px;
+        margin-top: 40px;
+    }
+}
+
+/* 4.4 - Image */
+
+.image-wrapper {
+    display: flex;
+
+    @media screen and (max-width: 1100px) {
+        display: unset;
+    }
+}
+
+.image-wrapper img {
+    height: 100%;
+    
+    @media screen and (max-width: 1100px) {
+        width: 100%;
+    }
+}
+
+.overlay-container {
+    position: relative;
+}
+
+.overlay {
+    background-color: var(--soft-violet);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    mix-blend-mode: multiply;
+}
