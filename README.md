@@ -11,4 +11,5 @@ Users should be able to:
 
 ### Languages
 
-* Python
+* HTML
+* CSS
